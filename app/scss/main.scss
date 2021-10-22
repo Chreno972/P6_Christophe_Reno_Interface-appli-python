@@ -82,9 +82,9 @@ body, html {
                 font-family: 'Noto Sans Mono', monospace;
                 width: 40px;
                 height: 40px;
-                position: relative;
-                top: -820px;
-                right: -560px;
+                position: fixed;
+                top: 20px;
+                right: 560px;
                 transition: 1s ease-in-out;
                 text-decoration: none;
                 text-transform: uppercase;
