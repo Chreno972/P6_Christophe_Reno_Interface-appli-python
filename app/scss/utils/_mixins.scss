@@ -1,0 +1,12 @@
+@mixin flex_column_center {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin center-bolder-capitalize-white {
+    text-align: center;
+    font-weight: bolder;
+    text-transform: capitalize;
+    color: #fff;
+}

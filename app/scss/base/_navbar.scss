@@ -1,0 +1,23 @@
+#navbar {
+    height: auto;
+    grid-column: 1/13;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    font-size: larger;
+    // #logo {
+    // }
+    .nav_links {
+        display: flex;
+        justify-content: center;
+        margin-right: 100px;
+        &__li {
+            text-decoration: none;
+            list-style-type: none;
+            color: #fff;
+            margin: 0 10px;
+        }
+    }
+}

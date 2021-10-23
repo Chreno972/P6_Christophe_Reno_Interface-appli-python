@@ -1,0 +1,47 @@
+#best_film {
+    width: 70%;
+    height: 300px;
+    grid-column: 1/13;
+    grid-row: 2/3;
+    border: 5px solid #222;
+    color: #fff;
+    background: #222;
+    display:grid;
+    font-weight: bolder;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin: 0 auto 25px auto;
+    #elements {
+        grid-row: 1/4;
+        grid-column: 1/2;
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+        a {
+            transition: 1s ease-in-out;
+            text-decoration: none;
+            color: white;
+            background-color: #f00020;;
+            border: none;
+            border-radius: 100px;
+            padding: 10px 30px;
+            margin-top: 20px;
+            box-shadow: 1px 1px 5px #222;
+            &:hover {
+                box-shadow: none;
+            }
+        }
+        #best_film_description {
+            width: 50%;
+            margin: 20px auto 0 auto;
+            padding: 10px;
+            font-weight: lighter;
+        }
+    }
+    #best_film_image {
+        grid-row: 1/4;
+        grid-column: 2/3;
+        align-self: center;
+        justify-self: center;
+    }
+}
