@@ -21,7 +21,7 @@
 - Faites de même pour le dossier de l'API, rendez-vous [ici](https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR)
 
 - Cloner ce dépôt de code à l'aide de la commande 
-  `$ git clone https://github.com/Chreno972/P6_Christophe_Reno_Interface-appli-python.git` 
+  ` $ git clone https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR.git` 
 (vous pouvez également télécharger le code en temps qu'archive zip)
 
 - Si vous avez téléchargé le dossier de l'API sous format zip, créer un dossier placez le dossier de l'API dezzipé dans le dossier qui contient celui de l'interface web.
