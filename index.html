@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="app/css/main.css">
     <title>Just Stream It</title>
 </head>
 <body>
     <div id="modal">
-        <div id="modal_box">
+        <div id="modal_box" class="active">
             <div id="renseignements"></div>
             <div id="modal_image_container"></div>
             <div id="modal_title_container"></div>
@@ -19,30 +20,30 @@
         </div>
     </div>
     <div id="main_container">
-        <section id="navbar">
+        <div id="navbar">
             <img src="https://fontmeme.com/permalink/211022/b51e9d3806f445557dae34dc138dd1c8.png" alt="logo">
             <ul class="nav_links">
                 <li class="nav_links__li" id="accueil">Accueil</li>
                 <li class="nav_links__li" id="categories">Catégories</li>
             </ul>
-        </section>
+        </div>
 
-        <section id="best_film">
+        <div id="best_film">
             <div id="elements">
-                <h2 id="titre"></h2>
+                <p class="bf_title" id="titre"></p>
                 <a href="#">Jouer</a>
                 <p id="best_film_description"></p>
             </div>
-            <img src="" alt="" id="best_film_image">
-        </section>
+            <img src="#" alt="" id="best_film_image">
+        </div>
 
         <section id="top_rated_movies_imdb">
             <h2 id="top_rated_movies_title">Films les mieux notés</h2>
             <div class="carousel">
                 <div id="carousel_box">
                 </div>
-                <a class="switch_left slider_button"><</a>
-                <a class="switch_right slider_button">></a>
+                <a class="switch_left slider_button"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                <a class="switch_right slider_button"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
             </div>
         </section>
 
@@ -51,8 +52,8 @@
             <div class="top_voted_movies_carousel">
                 <div id="top_voted_movies_carousel_box">
                 </div>
-                <a class="second_switch_left second_slider_button"><</a>
-                <a class="second_switch_right second_slider_button">></a>
+                <a class="second_switch_left second_slider_button"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                <a class="second_switch_right second_slider_button"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
             </div>
         </section>
 
@@ -61,8 +62,8 @@
             <div class="most_recent_movies_carousel">
                 <div id="most_recent_movies_carousel_box">
                 </div>
-                <a class="third_switch_left third_slider_button"><</a>
-                <a class="third_switch_right third_slider_button">></a>
+                <a class="third_switch_left third_slider_button"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                <a class="third_switch_right third_slider_button"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
             </div>
         </section>
 
@@ -71,12 +72,10 @@
             <div class="best_horror_movies_carousel">
                 <div id="best_horror_movies_carousel_box">
                 </div>
-                <a class="fourth_switch_left fourth_slider_button"><</a>
-                <a class="fourth_switch_right fourth_slider_button">></a>
+                <a class="fourth_switch_left fourth_slider_button"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                <a class="fourth_switch_right fourth_slider_button"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
             </div>
         </section>
-
-        <section id="category_three"></section>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.js"></script>
     <script type="module" src="/app/js/best_film.js"></script>

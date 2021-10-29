@@ -41,7 +41,7 @@ function get_best_film() {
             titre.innerHTML = inner_data.title;
             best_film_image.src = inner_data.image_url;
             description.innerHTML = inner_data.long_description;
-
+// ajouter condition si nul CA
             window.setTimeout(() => {
                 best_film_image.addEventListener("click", () => {
                     modal_renseignements.innerHTML = `
@@ -52,7 +52,7 @@ function get_best_film() {
                     <p class="modal_directors"><strong>Réalisateurs :</strong> ${inner_data.directors}</p
                     <p class="modal_duration"><strong>Durée :</strong> ${inner_data.duration}</p>
                     <p class="modal_countries"><strong>Pays :</strong> ${inner_data.countries}</p>
-                    <p class="modal_income"><strong>C.A :</strong> ${inner_data.worldwide_gross_income}$</p>
+                    <p class="modal_income"><strong>C.A :</strong> ${inner_data.worldwide_gross_income}</p>
                     `;
                     modal_image_container.innerHTML = `<img src="${inner_data.image_url}" class="modal_image"/>`;
                     modal_title_container.innerHTML = `<h2 class="modal_title">${inner_data.title}</h2>`;
