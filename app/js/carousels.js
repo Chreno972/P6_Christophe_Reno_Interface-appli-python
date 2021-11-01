@@ -20,8 +20,6 @@ const sliders = document.querySelector("#carousel_box");
 const second_sliders = document.querySelector("#top_voted_movies_carousel_box");
 const third_sliders = document.querySelector("#most_recent_movies_carousel_box");
 const fourth_sliders = document.querySelector("#best_horror_movies_carousel_box");
-let scrollPerClick = 1000;
-let scrollAmount = 0;
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -103,30 +101,7 @@ async function testData(url1, url2, html_element) {
 // ferme le modal au click sur "modal_button" (bouton close)
 modal_button.addEventListener("click", () => {
     modal.style.display = "none";
-})
-
-// Scroll le carousel à droite
-function scrollLeft(sl) {
-    sl.scrollTo({
-        top: 0,
-        left: (scrollAmount -= scrollPerClick),
-        behavior: "smooth"
-    });
-
-    if(scrollAmount < 0) {
-        scrollAmount = 0
-    }
-}
-// Scroll le carousel à droite
-function scrollRight(sl) {
-    if(scrollAmount <= sl.scrollWidth - sl.clientWidth) {
-        sl.scrollTo({
-            top: 0,
-            left: (scrollAmount += scrollPerClick),
-            behavior: "smooth"
-        });
-    }
-}
+});
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -137,10 +112,10 @@ function scrollRight(sl) {
 testData(`http://localhost:8000/api/v1/titles?sort_by=-imdb_score`, `http://localhost:8000/api/v1/titles?sort_by=-imdb_score&page=2`, sliders);
 
 document.querySelector(".switch_left").addEventListener("click", () => {
-    scrollLeft(sliders)
+    sliders.scrollLeft -= 220;
 });
 document.querySelector(".switch_right").addEventListener("click", () => {
-    scrollRight(sliders)
+    sliders.scrollLeft += 220;
 });
 
 
@@ -153,10 +128,10 @@ document.querySelector(".switch_right").addEventListener("click", () => {
 testData(`http://localhost:8000/api/v1/titles?sort_by=-votes`, `http://localhost:8000/api/v1/titles?sort_by=-votes&page=2`, second_sliders);
 
 document.querySelector(".second_switch_left").addEventListener("click", () => {
-    scrollLeft(second_sliders)
+    second_sliders.scrollLeft -= 220;
 });
 document.querySelector(".second_switch_right").addEventListener("click", () => {
-    scrollRight(second_sliders)
+    second_sliders.scrollLeft += 220;
 });
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -168,10 +143,10 @@ document.querySelector(".second_switch_right").addEventListener("click", () => {
 testData(`http://localhost:8000/api/v1/titles?sort_by=-year`, `http://localhost:8000/api/v1/titles?sort_by=-year&page=2`, third_sliders);
 
 document.querySelector(".third_switch_left").addEventListener("click", () => {
-    scrollLeft(third_sliders)
+    third_sliders.scrollLeft -= 220;
 });
 document.querySelector(".third_switch_right").addEventListener("click", () => {
-    scrollRight(third_sliders)
+    third_sliders.scrollLeft += 220;
 });
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -183,8 +158,8 @@ document.querySelector(".third_switch_right").addEventListener("click", () => {
 testData(`http://localhost:8000/api/v1/titles?genre=horror&sort_by=-votes`, `http://localhost:8000/api/v1/titles?genre=horror&sort_by=-votes&page=2`, fourth_sliders);
 
 document.querySelector(".fourth_switch_left").addEventListener("click", () => {
-    scrollLeft(fourth_sliders)
+    fourth_sliders.scrollLeft -= 220;
 });
 document.querySelector(".fourth_switch_right").addEventListener("click", () => {
-    scrollRight(fourth_sliders)
+    fourth_sliders.scrollLeft += 220;
 });
