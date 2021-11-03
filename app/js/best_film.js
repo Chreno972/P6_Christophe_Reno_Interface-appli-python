@@ -1,3 +1,5 @@
+
+// ? LES ELEMENTS HTML
 // conteneur html de la catégorie "meilleur film"
 let best_film = document.getElementById("best_film");
 // conteneur html de l'image du meilleur film
@@ -29,20 +31,28 @@ get_best_film();
 
 // ? Fonction destinée à être utilisée par la catégorie meilleur film
 function get_best_film() {
-    // url de la page filtrée
+    // url de la page qui filtre les films selon leur scrore imdb 
+    // du plus grand au plus petit 
     let url = `http://localhost:8000/api/v1/titles?sort_by=-imdb_score`;
+
+    
+    
+    
+    
     // fetch l'url pour récupérer les informations
-    // récupère l'url du premier élément (film) de la page
-    // fetch l'url de cet élément
-    // insère des informations de l'élément dans le document html
     fetch(url).then((response) => response.json()).then((data) => {
+        // récupère l'url du premier élément (film) de la page
         let inner_data_url = data.results[0].url;
+        // fetch l'url de cet élément
         fetch(inner_data_url).then((resp) => resp.json()).then((inner_data) => {
+            // insère des informations de l'élément dans le document html
             titre.innerHTML = inner_data.title;
             best_film_image.src = inner_data.image_url;
             description.innerHTML = inner_data.long_description;
-// ajouter condition si nul CA
+
             window.setTimeout(() => {
+                // enregistrement des informations du film dans le modal html
+                // attenant au film avant son affichage
                 best_film_image.addEventListener("click", () => {
                     modal_renseignements.innerHTML = `
                     <p class="modal_genres"><strong>Genres :</strong> ${inner_data.genres}</p>
@@ -58,6 +68,7 @@ function get_best_film() {
                     modal_title_container.innerHTML = `<h2 class="modal_title">${inner_data.title}</h2>`;
                     modal_description_container.innerHTML = `<p class="modal_description"><strong>Description :</strong> ${inner_data.long_description}</p>`
                     modal_actors_container.innerHTML = `<p class="modal_actors"><strong>Acteurs :</strong> ${inner_data.actors}</p>`;
+                    // Affiche le modal html
                     modal.style.display = "flex";
                 })
             }, 3000)

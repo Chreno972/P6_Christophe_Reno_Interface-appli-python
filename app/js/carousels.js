@@ -66,16 +66,18 @@ async function testData(url1, url2, html_element) {
             `
         )
     })
+    
     // attend 3 secondes, le chargement de toutes les images
-    // récupère chaque enfant d'une div (image de film)
-    // si l'id de l'enfant cliqué = le titre d'un des films récupérés
-    // stocke les informations du film dans le modal html selon une structure précise
-    // affiche le modal html
     window.setTimeout(() => {
+        // pour chaque enfant d'une div
         for (let item of html_element.childNodes) {
+            // au click sur cet enfant de la div
             item.addEventListener("click", () => {
+                // pour chaque objet film dans l'array arr3
                 for (let film of arr3) {
+                    // si l'id de l'enfant cliqué = le titre d'un des films récupérés
                     if (item.id == film.titre) {
+                        // stocke les informations du film dans le modal html
                         modal_renseignements.innerHTML = `
                         <p class="modal_genres"><strong>Genres :</strong> ${film.genre}</p>
                         <p class="modal_publish_date"><strong>Publié le :</strong> ${film.date_sortie}</p>

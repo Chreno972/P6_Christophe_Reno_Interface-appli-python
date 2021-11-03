@@ -1,3 +1,5 @@
+
+// ? Classe qui crée un objet Film et permet de le sérialiser
 export default class Film{
     constructor(
         image,
